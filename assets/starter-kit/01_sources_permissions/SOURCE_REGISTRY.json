@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-08-30T10:30:00Z",
+  "sources": [
+    {
+      "source_id": "SRC-SKILL-001",
+      "title": "RenWork Growth OS Knowledge Base Skill",
+      "type": "official_document",
+      "uri": "skill://renwork-growth-os-kb/SKILL.md",
+      "authority": "S",
+      "status": "readable",
+      "captured_at": "2026-08-30T10:30:00Z",
+      "allowed_use": [
+        "operating_contract",
+        "safety_boundary",
+        "workflow"
+      ],
+      "limitations": "Skill instructions govern knowledge-base work but do not prove live product integrations or business results."
+    },
+    {
+      "source_id": "SRC-FRAMEWORK-001",
+      "title": "RenWork 21-module public starter framework",
+      "type": "official_document",
+      "uri": "skill://renwork-growth-os-kb/assets/starter-kit/module-catalog.json",
+      "authority": "B",
+      "status": "readable",
+      "captured_at": "2026-08-30T10:30:00Z",
+      "allowed_use": [
+        "schema",
+        "module_design",
+        "foreign_trade_workflow"
+      ],
+      "limitations": "Framework fields, examples, ratios, and workflow thresholds require organization-specific evidence and calibration."
+    },
+    {
+      "source_id": "SRC-ARCH-001",
+      "title": "RenWork knowledge-base architecture and state model",
+      "type": "official_document",
+      "uri": "skill://renwork-growth-os-kb/references/architecture.md",
+      "authority": "B",
+      "status": "readable",
+      "captured_at": "2026-08-30T10:30:00Z",
+      "allowed_use": [
+        "architecture",
+        "industry_pack_boundary",
+        "status_reporting"
+      ],
+      "limitations": "Architecture guidance is not production deployment evidence."
+    },
+    {
+      "source_id": "SRC-GOV-001",
+      "title": "RenWork evidence and automation governance",
+      "type": "official_document",
+      "uri": "skill://renwork-growth-os-kb/references/evidence-governance.md",
+      "authority": "B",
+      "status": "readable",
+      "captured_at": "2026-08-30T10:30:00Z",
+      "allowed_use": [
+        "evidence_grade",
+        "tenant_governance",
+        "public_claim_gate"
+      ],
+      "limitations": "Organization-specific legal, security, and compliance review may impose stricter controls."
+    },
+    {
+      "source_id": "SRC-WEB-001",
+      "title": "人人易 AI public website snapshot",
+      "type": "official_website",
+      "uri": "https://www.rrenn.com/",
+      "authority": "A",
+      "status": "readable_at_capture",
+      "captured_at": "2026-08-30T10:28:48Z",
+      "allowed_use": [
+        "public_positioning_snapshot",
+        "already_public_copy"
+      ],
+      "limitations": "This is point-in-time page evidence. Recheck the live site before publication; page copy alone does not prove every capability is production-ready."
+    }
+  ]
+}

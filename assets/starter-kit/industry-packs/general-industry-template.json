@@ -1,0 +1,78 @@
+{
+  "pack_id": "industry-template",
+  "version": "1.0.0",
+  "status": "PLANNED",
+  "name_zh": "跨行业知识包模板",
+  "core_version": "4.0.0",
+  "target_organizations": [
+    "待定义行业组织"
+  ],
+  "object_aliases": {
+    "Organization": "组织",
+    "Offering": "产品/服务/项目",
+    "Persona": "客户/用户/受益人/合作方",
+    "Opportunity": "业务机会/服务请求/项目",
+    "Transaction": "合同/付款/报名/续费",
+    "Delivery": "交付/服务/教学/运营"
+  },
+  "required_fields_by_module": {
+    "02_company_identity": [
+      "organization_identity",
+      "mission",
+      "verified_capabilities"
+    ],
+    "04_product_catalog": [
+      "offering_id",
+      "scope",
+      "conditions",
+      "evidence",
+      "limitations"
+    ],
+    "06_certification_compliance": [
+      "jurisdiction",
+      "regulated_activity",
+      "official_source",
+      "professional_review"
+    ],
+    "09_icp_buyer_personas": [
+      "persona",
+      "decision_roles",
+      "problem",
+      "success_criteria"
+    ],
+    "14_customer_asset_lifecycle": [
+      "account",
+      "contact",
+      "opportunity",
+      "interaction",
+      "outcome",
+      "consent"
+    ],
+    "19_order_delivery_aftersales": [
+      "service_stage",
+      "acceptance",
+      "incident",
+      "follow_up"
+    ]
+  },
+  "hard_stops": [
+    "未完成行业法规和专业责任核验",
+    "把模板字段或示例当作组织事实",
+    "未经授权跨行业或跨租户复用业务数据",
+    "在高风险场景绕过专业审核"
+  ],
+  "eval_case_ids": [
+    "EV-012",
+    "EV-013",
+    "EV-020",
+    "EV-022",
+    "EV-023",
+    "EV-024"
+  ],
+  "source_refs": [
+    "SRC-FRAMEWORK-001",
+    "SRC-ARCH-001",
+    "SRC-GOV-001"
+  ],
+  "public_claim_approved": false
+}

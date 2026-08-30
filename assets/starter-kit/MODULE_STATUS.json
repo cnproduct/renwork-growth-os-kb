@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0.0",
+  "updated_at": "2026-08-30T10:30:00Z",
+  "modules": [
+    {
+      "id": "00_kb_governance",
+      "state": "M2_READY",
+      "owner": "knowledge_governance",
+      "next_gate": "operating_owner_assignment"
+    },
+    {
+      "id": "01_sources_permissions",
+      "state": "M2_READY",
+      "owner": "knowledge_governance",
+      "next_gate": "commercial_truth_source"
+    },
+    {
+      "id": "02_company_identity",
+      "state": "PARTIAL_PUBLIC_FACT",
+      "owner": "product_brand",
+      "next_gate": "approved_product_truth_review"
+    },
+    {
+      "id": "03_brand_messaging",
+      "state": "DRAFT",
+      "owner": "product_brand",
+      "next_gate": "brand_ssot_approval"
+    },
+    {
+      "id": "04_product_catalog",
+      "state": "DRAFT",
+      "owner": "product",
+      "next_gate": "capability_acceptance_mapping"
+    },
+    {
+      "id": "05_manufacturing_quality",
+      "state": "DESIGN_READY",
+      "owner": "engineering",
+      "next_gate": "production_slo_and_dr"
+    },
+    {
+      "id": "06_certification_compliance",
+      "state": "PARTIAL",
+      "owner": "security_legal",
+      "next_gate": "jurisdiction_matrix"
+    },
+    {
+      "id": "07_commercial_delivery",
+      "state": "CONFLICTED",
+      "owner": "product_finance_legal",
+      "next_gate": "authoritative_catalog_signature"
+    },
+    {
+      "id": "08_market_intelligence",
+      "state": "DRAFT",
+      "owner": "growth_strategy",
+      "next_gate": "pilot_evidence"
+    },
+    {
+      "id": "09_icp_buyer_personas",
+      "state": "DRAFT",
+      "owner": "growth_strategy",
+      "next_gate": "customer_interview_validation"
+    },
+    {
+      "id": "10_buyer_intent_signals",
+      "state": "DESIGN_READY",
+      "owner": "growth_data",
+      "next_gate": "real_outcome_calibration"
+    },
+    {
+      "id": "11_competitors_differentiation",
+      "state": "HYPOTHESIS",
+      "owner": "product_marketing",
+      "next_gate": "sourced_competitive_review"
+    },
+    {
+      "id": "12_product_market_fit",
+      "state": "HYPOTHESIS",
+      "owner": "product_growth",
+      "next_gate": "cohort_validation"
+    },
+    {
+      "id": "13_lead_discovery",
+      "state": "DESIGN_READY",
+      "owner": "growth_product",
+      "next_gate": "provider_and_e2e_acceptance"
+    },
+    {
+      "id": "14_customer_asset_lifecycle",
+      "state": "DESIGN_READY",
+      "owner": "crm_data",
+      "next_gate": "persistent_tenant_data"
+    },
+    {
+      "id": "15_inquiry_qualification",
+      "state": "DESIGN_READY",
+      "owner": "sales_ops",
+      "next_gate": "real_inquiry_eval"
+    },
+    {
+      "id": "16_solution_quotation",
+      "state": "DESIGN_READY",
+      "owner": "sales_finance",
+      "next_gate": "pricing_and_approval_integration"
+    },
+    {
+      "id": "17_objection_negotiation",
+      "state": "DESIGN_READY",
+      "owner": "sales_enablement",
+      "next_gate": "approved_playbooks"
+    },
+    {
+      "id": "18_sales_content_templates",
+      "state": "DESIGN_READY",
+      "owner": "brand_growth",
+      "next_gate": "channel_publish_acceptance"
+    },
+    {
+      "id": "19_order_delivery_aftersales",
+      "state": "DESIGN_READY",
+      "owner": "delivery_ops",
+      "next_gate": "order_system_integration"
+    },
+    {
+      "id": "20_learning_metrics",
+      "state": "M2_READY",
+      "owner": "knowledge_operations",
+      "next_gate": "live_metrics_and_kcs_cadence"
+    }
+  ]
+}

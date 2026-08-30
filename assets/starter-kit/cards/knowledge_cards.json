@@ -1,0 +1,590 @@
+[
+  {
+    "kb_id": "RW-RWPLAT-0101",
+    "tenant_id": "renwork-platform",
+    "revision": 1,
+    "module": "02_company_identity",
+    "knowledge_kind": "fact",
+    "entity_type": "product",
+    "entity_id": "renwork",
+    "title": "RenWork 当前官网公开定位",
+    "language": "zh-CN",
+    "status": "public_fact",
+    "confidence": 0.95,
+    "confidence_basis": "2026-08-30 读取当前官网 title、description 与结构化数据。",
+    "sensitivity": "public",
+    "public_claim_approved": true,
+    "role_views": [
+      "management",
+      "sales_director",
+      "junior_sales",
+      "senior_sales",
+      "marketing",
+      "operations_quality"
+    ],
+    "applicable_markets": [
+      "中国出海企业服务"
+    ],
+    "applicable_buyer_types": [
+      "出口制造企业",
+      "外贸公司",
+      "工贸一体企业"
+    ],
+    "workflow_stages": [
+      "品牌认知",
+      "产品介绍"
+    ],
+    "conclusion": "当前官网将人人易 AI / RenWork 定位为企业级外贸 B2B 增长操作系统与 AI 数字员工平台。",
+    "conditions": "仅用于描述 2026-08-30 官网已公开的产品定位，不代表对每项功能作独立生产验收。",
+    "source_refs": [
+      {
+        "type": "official_website",
+        "uri": "https://www.rrenn.com/",
+        "captured_at": "2026-08-30T10:28:48Z",
+        "locator": "HTML title/meta description/JSON-LD",
+        "excerpt": "企业级外贸 B2B 增长操作系统与 AI 数字员工平台",
+        "authority": "A"
+      }
+    ],
+    "recommended_actions": "对外引用时保留当前阶段和能力状态；具体功能链接到能力状态表。",
+    "red_lines": "不得由该定位推导出保证获客、全自动成交或全部功能已上线。",
+    "pending_confirmations": "品牌 Owner 确认最终短句、英文版与主域名。",
+    "created_at": "2026-08-30T10:30:00Z",
+    "updated_at": "2026-08-30T10:30:00Z"
+  },
+  {
+    "kb_id": "RW-RWPLAT-0102",
+    "tenant_id": "renwork-platform",
+    "revision": 1,
+    "module": "00_kb_governance",
+    "knowledge_kind": "rule",
+    "entity_type": "product_scope",
+    "entity_id": "phase-1",
+    "title": "Phase 1 聚焦外贸企业 AI 自动化增长",
+    "language": "zh-CN",
+    "status": "verified_fact",
+    "confidence": 1,
+    "confidence_basis": "本发行版产品范围明确指定当前聚焦与后续方向。",
+    "sensitivity": "internal",
+    "public_claim_approved": false,
+    "role_views": [
+      "management",
+      "sales_director",
+      "marketing",
+      "operations_quality"
+    ],
+    "applicable_markets": [
+      "外贸 B2B"
+    ],
+    "applicable_buyer_types": [
+      "出口企业"
+    ],
+    "workflow_stages": [
+      "产品规划",
+      "知识建设"
+    ],
+    "conclusion": "RenWork 知识库前期唯一主航道是外贸企业 AI 自动化增长操作系统；跨行业属于分阶段扩展。",
+    "conditions": "直到新的产品范围决议替代本卡。",
+    "source_refs": [
+      {
+        "type": "official_document",
+        "uri": "skill://renwork-growth-os-kb/assets/starter-kit/ROADMAP.md",
+        "captured_at": "2026-08-30T10:30:00Z",
+        "locator": "Phase 1 与跨行业路线",
+        "authority": "B"
+      }
+    ],
+    "recommended_actions": "优先完成外贸主包的事实、流程、连接器与真实客户试点。",
+    "red_lines": "不得把跨行业路线描述为已经覆盖所有行业。",
+    "pending_confirmations": "Phase 1 的目标客户数量、业务 KPI 与发布里程碑。",
+    "created_at": "2026-08-30T10:30:00Z",
+    "updated_at": "2026-08-30T10:30:00Z"
+  },
+  {
+    "kb_id": "RW-RWPLAT-0103",
+    "tenant_id": "renwork-platform",
+    "revision": 1,
+    "module": "01_sources_permissions",
+    "knowledge_kind": "rule",
+    "entity_type": "governance_rule",
+    "entity_id": "tenant-boundary",
+    "title": "身份和租户先于知识与工具访问",
+    "language": "zh-CN",
+    "status": "verified_fact",
+    "confidence": 0.98,
+    "confidence_basis": "当前 V4 架构明确 REST/MCP 的租户固定来源和禁止模型传入租户。",
+    "sensitivity": "internal",
+    "public_claim_approved": false,
+    "role_views": [
+      "management",
+      "sales_director",
+      "operations_quality"
+    ],
+    "applicable_markets": [],
+    "applicable_buyer_types": [],
+    "workflow_stages": [
+      "登录",
+      "检索",
+      "工具调用",
+      "导出"
+    ],
+    "conclusion": "所有知识检索、工具调用、导出与学习必须先解析身份、组织、租户和权限；模型参数不得切换租户。",
+    "conditions": "适用于所有部署形态和行业包。",
+    "source_refs": [
+      {
+        "type": "official_document",
+        "uri": "skill://renwork-growth-os-kb/references/architecture.md",
+        "captured_at": "2026-08-30T10:30:00Z",
+        "locator": "RenWork Core 与状态模型",
+        "authority": "B"
+      }
+    ],
+    "recommended_actions": "把 tenant_id 从鉴权上下文派生，并对跨租户负向用例做回归测试。",
+    "red_lines": "禁止从模型请求体、工具参数或内容文本接受租户切换。",
+    "pending_confirmations": "生产 OIDC、RLS、成员/团队 RBAC/ABAC 的最终实现。",
+    "created_at": "2026-08-30T10:30:00Z",
+    "updated_at": "2026-08-30T10:30:00Z"
+  },
+  {
+    "kb_id": "RW-RWPLAT-0104",
+    "tenant_id": "renwork-platform",
+    "revision": 1,
+    "module": "01_sources_permissions",
+    "knowledge_kind": "rule",
+    "entity_type": "governance_rule",
+    "entity_id": "claim-gate",
+    "title": "来源、状态、敏感度与公开批准独立治理",
+    "language": "zh-CN",
+    "status": "verified_fact",
+    "confidence": 1,
+    "confidence_basis": "V4 知识卡 Schema 与架构文档均显式定义。",
+    "sensitivity": "internal",
+    "public_claim_approved": false,
+    "role_views": [
+      "management",
+      "sales_director",
+      "marketing",
+      "operations_quality"
+    ],
+    "applicable_markets": [],
+    "applicable_buyer_types": [],
+    "workflow_stages": [
+      "知识入库",
+      "内容生成",
+      "公开发布"
+    ],
+    "conclusion": "证据等级、事实状态、敏感度、公开批准、租户范围和有效期必须分别记录。",
+    "conditions": "适用于全部知识卡和行业包。",
+    "source_refs": [
+      {
+        "type": "official_document",
+        "uri": "skill://renwork-growth-os-kb/assets/starter-kit/schemas/knowledge-card.schema.json",
+        "captured_at": "2026-08-30T10:30:00Z",
+        "locator": "status/sensitivity/public_claim_approved/source_refs",
+        "authority": "B"
+      }
+    ],
+    "recommended_actions": "只有 verified_fact/public_fact 且通过公开闸门的 public 内容才能进入对外素材。",
+    "red_lines": "高权威来源也可能过期或不可公开；已公开表达也不能自动证明功能已验收。",
+    "pending_confirmations": "正式 Owner、审核 SLA 与失效策略。",
+    "created_at": "2026-08-30T10:30:00Z",
+    "updated_at": "2026-08-30T10:30:00Z"
+  },
+  {
+    "kb_id": "RW-RWPLAT-0105",
+    "tenant_id": "renwork-platform",
+    "revision": 1,
+    "module": "13_lead_discovery",
+    "knowledge_kind": "workflow",
+    "entity_type": "growth_workflow",
+    "entity_id": "ai-find-buyers",
+    "title": "AI 找客户/买家增长标准旅程",
+    "language": "zh-CN",
+    "status": "strategy_recommendation",
+    "confidence": 0.92,
+    "confidence_basis": "基于 V4 外贸框架、当前产品方向和租户安全原则综合。",
+    "sensitivity": "internal",
+    "public_claim_approved": false,
+    "role_views": [
+      "management",
+      "sales_director",
+      "junior_sales",
+      "senior_sales",
+      "marketing"
+    ],
+    "applicable_markets": [
+      "外贸 B2B"
+    ],
+    "applicable_buyer_types": [
+      "进口商",
+      "品牌商",
+      "批发商",
+      "渠道商"
+    ],
+    "workflow_stages": [
+      "目标定义",
+      "企业匹配",
+      "联系人验证",
+      "触达计划"
+    ],
+    "conclusion": "普通用户按产品/市场/客户类型进入，依次获得买家画像、候选企业、证据等级、联系人状态、去重风险与下一步计划。",
+    "conditions": "真实 Provider、许可、组织预算和数据范围已配置；否则相应步骤返回 unavailable。",
+    "source_refs": [
+      {
+        "type": "official_document",
+        "uri": "skill://renwork-growth-os-kb/assets/starter-kit/13_lead_discovery/README.md",
+        "captured_at": "2026-08-30T10:30:00Z",
+        "locator": "AI 找客户与买家增长",
+        "authority": "B"
+      },
+      {
+        "type": "ai_inference",
+        "captured_at": "2026-08-30T10:30:00Z",
+        "locator": "产品架构综合",
+        "authority": "D"
+      }
+    ],
+    "recommended_actions": "在普通 UI 隐藏 Provider 复杂度，在管理员审计中保留来源、时间、成本和操作者。",
+    "red_lines": "公开目录、联系方式或匹配分数不能描述为真实采购或近期交易。",
+    "pending_confirmations": "Provider 列表、许可、费用、数据范围和生产 E2E。",
+    "created_at": "2026-08-30T10:30:00Z",
+    "updated_at": "2026-08-30T10:30:00Z"
+  },
+  {
+    "kb_id": "RW-RWPLAT-0106",
+    "tenant_id": "renwork-platform",
+    "revision": 1,
+    "module": "14_customer_asset_lifecycle",
+    "knowledge_kind": "rule",
+    "entity_type": "customer_governance",
+    "entity_id": "three-axis-grading",
+    "title": "买家证据、联系人验证与销售优先级三轴分离",
+    "language": "zh-CN",
+    "status": "verified_fact",
+    "confidence": 0.95,
+    "confidence_basis": "V4 客户模型和既有治理规则明确要求独立分级。",
+    "sensitivity": "internal",
+    "public_claim_approved": false,
+    "role_views": [
+      "management",
+      "sales_director",
+      "junior_sales",
+      "senior_sales",
+      "operations_quality"
+    ],
+    "applicable_markets": [
+      "外贸 B2B"
+    ],
+    "applicable_buyer_types": [
+      "全部候选企业和联系人"
+    ],
+    "workflow_stages": [
+      "背调",
+      "去重",
+      "评分",
+      "跟进"
+    ],
+    "conclusion": "E 轴判断公司级买家/交易证据，C 轴判断联系人验证，R 轴判断销售优先级；任一轴不得自动升级其他轴。",
+    "conditions": "适用于买家发现、CRM 导入、询盘、老客户和复购名单。",
+    "source_refs": [
+      {
+        "type": "official_document",
+        "uri": "skill://renwork-growth-os-kb/assets/starter-kit/14_customer_asset_lifecycle/README.md",
+        "captured_at": "2026-08-30T10:30:00Z",
+        "locator": "买家证据、联系人验证与销售优先级",
+        "authority": "B"
+      }
+    ],
+    "recommended_actions": "展示三个等级及各自证据；未知数字留空，不填 0。",
+    "red_lines": "不得用评分、邮箱存在或公开线索声称确认采购关系。",
+    "pending_confirmations": "最终等级字典、阈值和 UI 呈现。",
+    "created_at": "2026-08-30T10:30:00Z",
+    "updated_at": "2026-08-30T10:30:00Z"
+  },
+  {
+    "kb_id": "RW-RWPLAT-0107",
+    "tenant_id": "renwork-platform",
+    "revision": 1,
+    "module": "18_sales_content_templates",
+    "knowledge_kind": "workflow",
+    "entity_type": "content_workflow",
+    "entity_id": "review-before-publish",
+    "title": "内容生成、确认、发布与验证四态分离",
+    "language": "zh-CN",
+    "status": "strategy_recommendation",
+    "confidence": 0.98,
+    "confidence_basis": "现有治理边界与历史发布流程的稳定做法。",
+    "sensitivity": "internal",
+    "public_claim_approved": false,
+    "role_views": [
+      "management",
+      "sales_director",
+      "marketing",
+      "operations_quality"
+    ],
+    "applicable_markets": [],
+    "applicable_buyer_types": [],
+    "workflow_stages": [
+      "生成",
+      "审核",
+      "发布",
+      "渠道验证"
+    ],
+    "conclusion": "生成、内部批准、执行发布、目标渠道确认必须作为四个独立状态记录。",
+    "conditions": "适用于官网、社媒、邮件、B2B 平台、案例和公开材料。",
+    "source_refs": [
+      {
+        "type": "official_document",
+        "uri": "skill://renwork-growth-os-kb/SKILL.md",
+        "captured_at": "2026-08-30T10:30:00Z",
+        "locator": "Non-negotiable boundaries",
+        "authority": "S"
+      }
+    ],
+    "recommended_actions": "内容先引用批准事实，再进行事实/品牌/渠道/合规审查；发布后检查实际页面或消息状态。",
+    "red_lines": "看到预览、附件、发布按钮或代理报告不能直接记为已发布。",
+    "pending_confirmations": "各渠道账号 Owner、审批人和回滚策略。",
+    "created_at": "2026-08-30T10:30:00Z",
+    "updated_at": "2026-08-30T10:30:00Z"
+  },
+  {
+    "kb_id": "RW-RWPLAT-0108",
+    "tenant_id": "renwork-platform",
+    "revision": 1,
+    "module": "08_market_intelligence",
+    "knowledge_kind": "rule",
+    "entity_type": "architecture_rule",
+    "entity_id": "industry-pack",
+    "title": "跨行业扩展采用稳定内核与可插拔行业包",
+    "language": "zh-CN",
+    "status": "strategy_recommendation",
+    "confidence": 0.95,
+    "confidence_basis": "基于发行路线和稳定内核原则形成的架构方案。",
+    "sensitivity": "internal",
+    "public_claim_approved": false,
+    "role_views": [
+      "management",
+      "marketing",
+      "operations_quality"
+    ],
+    "applicable_markets": [
+      "多行业"
+    ],
+    "applicable_buyer_types": [
+      "多类型组织"
+    ],
+    "workflow_stages": [
+      "行业选择",
+      "知识建模",
+      "试点",
+      "发布"
+    ],
+    "conclusion": "核心对象、模块 ID、证据、权限和审计保持稳定；行业包只增加对象别名、字段、规则、来源、硬停止和评测。",
+    "conditions": "每个行业包经过来源核验、试点、黄金评测和 Owner 批准后启用。",
+    "source_refs": [
+      {
+        "type": "official_document",
+        "uri": "skill://renwork-growth-os-kb/assets/starter-kit/ROADMAP.md",
+        "captured_at": "2026-08-30T10:30:00Z",
+        "locator": "跨行业扩展路线",
+        "authority": "B"
+      },
+      {
+        "type": "official_document",
+        "uri": "skill://renwork-growth-os-kb/assets/starter-kit/industry-packs/ROADMAP.json",
+        "captured_at": "2026-08-30T10:30:00Z",
+        "locator": "行业包候选与状态",
+        "authority": "B"
+      }
+    ],
+    "recommended_actions": "先验证 export-b2b；从专业服务、教育协会、零售电商等低监管行业依次试点。",
+    "red_lines": "不能复制真实客户数据；不能把模板候选合规项直接当行业法规结论。",
+    "pending_confirmations": "跨行业优先级、行业 Owner、付费模式和试点名单。",
+    "created_at": "2026-08-30T10:30:00Z",
+    "updated_at": "2026-08-30T10:30:00Z"
+  },
+  {
+    "kb_id": "RW-RWPLAT-0109",
+    "tenant_id": "renwork-platform",
+    "revision": 1,
+    "module": "05_manufacturing_quality",
+    "knowledge_kind": "rule",
+    "entity_type": "capability_governance",
+    "entity_id": "status-gate",
+    "title": "能力状态必须区分本地、集成、构建与研究",
+    "language": "zh-CN",
+    "status": "verified_fact",
+    "confidence": 0.95,
+    "confidence_basis": "当前架构文档显式区分已实现与生产前必须补齐。",
+    "sensitivity": "internal",
+    "public_claim_approved": false,
+    "role_views": [
+      "management",
+      "marketing",
+      "operations_quality"
+    ],
+    "applicable_markets": [],
+    "applicable_buyer_types": [],
+    "workflow_stages": [
+      "产品说明",
+      "发布",
+      "验收"
+    ],
+    "conclusion": "能力使用 AVAILABLE、INTEGRATE、BUILD、FUTURE_RESEARCH；本地代码、PR、部署和业务 E2E 分别报告。",
+    "conditions": "适用于网站、知识库、销售材料、路线图和项目汇报。",
+    "source_refs": [
+      {
+        "type": "official_document",
+        "uri": "skill://renwork-growth-os-kb/references/architecture.md",
+        "captured_at": "2026-08-30T10:30:00Z",
+        "locator": "State model",
+        "authority": "B"
+      }
+    ],
+    "recommended_actions": "每次状态升级附代码、环境、数据、角色、负向测试、业务验收和回滚证据。",
+    "red_lines": "禁止用截图、页面可见、本地测试或计划文档替代生产验收。",
+    "pending_confirmations": "当前云端部署、正式版本和 E2E 验收登记。",
+    "created_at": "2026-08-30T10:30:00Z",
+    "updated_at": "2026-08-30T10:30:00Z"
+  },
+  {
+    "kb_id": "RW-RWPLAT-0110",
+    "tenant_id": "renwork-platform",
+    "revision": 1,
+    "module": "07_commercial_delivery",
+    "knowledge_kind": "fact",
+    "entity_type": "commercial_policy",
+    "entity_id": "pricing-conflict",
+    "title": "当前商业价格与权益口径待权威裁决",
+    "language": "zh-CN",
+    "status": "conflicted",
+    "confidence": 1,
+    "confidence_basis": "现有历史资料对免费、本地/BYOK、RenCredit 和套餐价格存在不同版本。",
+    "sensitivity": "restricted",
+    "public_claim_approved": false,
+    "role_views": [
+      "management",
+      "sales_director",
+      "operations_quality"
+    ],
+    "applicable_markets": [],
+    "applicable_buyer_types": [],
+    "workflow_stages": [
+      "报价",
+      "订阅",
+      "结算"
+    ],
+    "conclusion": "在取得版本化权威价格目录、权益快照和审批记录前，本知识库不固化对外价格或免费政策。",
+    "conditions": "持续到产品、财务、法务和平台 Owner 完成联合签署。",
+    "source_refs": [
+      {
+        "type": "official_document",
+        "uri": "skill://renwork-growth-os-kb/assets/starter-kit/07_commercial_delivery/README.md",
+        "captured_at": "2026-08-30T10:30:00Z",
+        "locator": "商业政策冲突治理",
+        "authority": "B"
+      }
+    ],
+    "recommended_actions": "建立单一商业真相源并记录生效时间、适用对象、税费、退款和旧版本迁移。",
+    "red_lines": "不得从旧方案、客户端缓存、单一页面或本地备用值选择一个版本对外承诺。",
+    "pending_confirmations": "价格目录、权益、计费事件、RenCredit 规则、本地/云/BYOK 政策。",
+    "created_at": "2026-08-30T10:30:00Z",
+    "updated_at": "2026-08-30T10:30:00Z"
+  },
+  {
+    "kb_id": "RW-RWPLAT-0111",
+    "tenant_id": "renwork-platform",
+    "revision": 1,
+    "module": "20_learning_metrics",
+    "knowledge_kind": "workflow",
+    "entity_type": "knowledge_operations",
+    "entity_id": "kcs-double-loop",
+    "title": "KCS 解决环与演进环",
+    "language": "zh-CN",
+    "status": "strategy_recommendation",
+    "confidence": 0.9,
+    "confidence_basis": "融合研究后的方法论已明确采用边界。",
+    "sensitivity": "internal",
+    "public_claim_approved": false,
+    "role_views": [
+      "management",
+      "sales_director",
+      "operations_quality"
+    ],
+    "applicable_markets": [],
+    "applicable_buyer_types": [],
+    "workflow_stages": [
+      "使用",
+      "反馈",
+      "复盘",
+      "更新"
+    ],
+    "conclusion": "一线先搜索、复用、标记和在权限内修复；Owner/KDE/Coach 定期聚合问题、重构知识域并更新评测。",
+    "conditions": "修复、补充和跨租户学习仍受来源、权限、审核和去标识约束。",
+    "source_refs": [
+      {
+        "type": "official_document",
+        "uri": "skill://renwork-growth-os-kb/references/publishing-and-operations.md",
+        "captured_at": "2026-08-30T10:30:00Z",
+        "locator": "Operating cadence 与 reviewed learning",
+        "authority": "B"
+      }
+    ],
+    "recommended_actions": "每周清理缺口/冲突/过期队列，每月跑评测与 AQI，每季度审计权限和知识地图。",
+    "red_lines": "不能把每次负反馈直接写入公共知识或提示词；错误集必须完成根因确认。",
+    "pending_confirmations": "运营角色、SLA、指标基线和激励机制。",
+    "created_at": "2026-08-30T10:30:00Z",
+    "updated_at": "2026-08-30T10:30:00Z"
+  },
+  {
+    "kb_id": "RW-RWPLAT-0112",
+    "tenant_id": "renwork-platform",
+    "revision": 1,
+    "module": "01_sources_permissions",
+    "knowledge_kind": "rule",
+    "entity_type": "publishing_rule",
+    "entity_id": "runtime-canonical-verification",
+    "title": "发布前重新核验 canonical 域名",
+    "language": "zh-CN",
+    "status": "strategy_recommendation",
+    "confidence": 0.95,
+    "confidence_basis": "网站域名、跳转和证书属于会变化的运行时状态，发行快照不能永久替代发布前核验。",
+    "sensitivity": "internal",
+    "public_claim_approved": false,
+    "role_views": [
+      "management",
+      "marketing",
+      "operations_quality"
+    ],
+    "applicable_markets": [],
+    "applicable_buyer_types": [],
+    "workflow_stages": [
+      "品牌",
+      "网站",
+      "发布"
+    ],
+    "conclusion": "本发行快照可核对的官网为 rrenn.com；任何网站发布前都必须重新核验当前 canonical、跳转、证书和目标环境。",
+    "conditions": "适用于官网、知识中心、结构化数据、下载链接和外部渠道链接。",
+    "source_refs": [
+      {
+        "type": "official_website",
+        "uri": "https://www.rrenn.com/",
+        "captured_at": "2026-08-30T10:28:48Z",
+        "locator": "canonical link",
+        "authority": "A"
+      },
+      {
+        "type": "official_document",
+        "uri": "skill://renwork-growth-os-kb/assets/starter-kit/WEBSITE_KB_MAP.md",
+        "captured_at": "2026-08-30T10:30:00Z",
+        "locator": "发布流水线",
+        "authority": "B"
+      }
+    ],
+    "recommended_actions": "由品牌或网站 Owner 在目标环境确认主域、301、证书、canonical 和回滚方案后再发布。",
+    "red_lines": "不得仅凭模板或旧快照修改 DNS、网站或公开链接。",
+    "pending_confirmations": "发布时的域名所有权、301 跳转、证书、最终 canonical 和环境。",
+    "created_at": "2026-08-30T10:30:00Z",
+    "updated_at": "2026-08-30T10:30:00Z"
+  }
+]

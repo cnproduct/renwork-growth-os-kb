@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "updated_at": "2026-08-30T10:30:00Z",
+  "packs": [
+    {
+      "pack_id": "export-b2b",
+      "status": "ACTIVE",
+      "gate": "current Phase 1"
+    },
+    {
+      "pack_id": "export-vertical-profiles",
+      "status": "PLANNED",
+      "gate": "author each pack and complete source, pilot and evaluation validation"
+    },
+    {
+      "pack_id": "professional-services",
+      "status": "PLANNED",
+      "gate": "pilot charter and 20+ golden cases"
+    },
+    {
+      "pack_id": "education-association",
+      "status": "PLANNED",
+      "gate": "privacy, content rights and outcome model"
+    },
+    {
+      "pack_id": "retail-ecommerce",
+      "status": "PLANNED",
+      "gate": "catalog, channel and transaction integration"
+    },
+    {
+      "pack_id": "local-service-chain",
+      "status": "PLANNED",
+      "gate": "location, service and membership lifecycle"
+    },
+    {
+      "pack_id": "general-manufacturing-project",
+      "status": "PLANNED",
+      "gate": "quality, project and delivery objects"
+    },
+    {
+      "pack_id": "healthcare",
+      "status": "FUTURE_RESEARCH",
+      "gate": "legal and clinical professional review"
+    },
+    {
+      "pack_id": "financial-services",
+      "status": "FUTURE_RESEARCH",
+      "gate": "licensed compliance and human accountability"
+    },
+    {
+      "pack_id": "legal-public-service",
+      "status": "FUTURE_RESEARCH",
+      "gate": "jurisdiction, privilege and public accountability"
+    }
+  ]
+}

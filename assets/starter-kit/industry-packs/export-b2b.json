@@ -1,0 +1,121 @@
+{
+  "pack_id": "export-b2b",
+  "version": "1.0.0",
+  "status": "ACTIVE",
+  "name_zh": "外贸企业 B2B 自动化增长",
+  "core_version": "4.0.0",
+  "target_organizations": [
+    "中国出口制造企业",
+    "外贸公司",
+    "工贸一体企业",
+    "跨境 B2B 服务团队"
+  ],
+  "object_aliases": {
+    "Organization": "出口企业/租户",
+    "Offering": "产品/SKU/OEM-ODM方案",
+    "Persona": "进口商/品牌商/批发商/渠道商/采购角色",
+    "Opportunity": "询盘/报价/样品/订单机会",
+    "Transaction": "订单/回款/复购",
+    "Delivery": "生产/质检/单证/出货/售后"
+  },
+  "required_fields_by_module": {
+    "04_product_catalog": [
+      "product_id",
+      "name_zh",
+      "name_en",
+      "specification",
+      "application",
+      "target_buyer",
+      "evidence",
+      "limitations"
+    ],
+    "06_certification_compliance": [
+      "target_market",
+      "product_scope",
+      "candidate_requirement",
+      "official_source",
+      "effective_date",
+      "verification_status"
+    ],
+    "07_commercial_delivery": [
+      "moq",
+      "price_variables",
+      "incoterm",
+      "payment",
+      "lead_time",
+      "approval_boundary"
+    ],
+    "09_icp_buyer_personas": [
+      "country",
+      "channel",
+      "company_type",
+      "decision_roles",
+      "buying_motive",
+      "success_criteria"
+    ],
+    "13_lead_discovery": [
+      "company_evidence",
+      "buyer_evidence_grade",
+      "contact_verification_grade",
+      "source_time",
+      "license",
+      "next_action"
+    ],
+    "14_customer_asset_lifecycle": [
+      "account_id",
+      "contact_id",
+      "opportunity_id",
+      "interaction",
+      "transaction",
+      "risk_consent"
+    ],
+    "15_inquiry_qualification": [
+      "identity",
+      "product_fit",
+      "quantity",
+      "market_compliance",
+      "budget",
+      "timeline",
+      "decision_process"
+    ],
+    "19_order_delivery_aftersales": [
+      "sample_id",
+      "quote_version",
+      "order_id",
+      "batch",
+      "qc",
+      "shipping_docs",
+      "payment_verification",
+      "aftersales_level"
+    ]
+  },
+  "hard_stops": [
+    "跨租户使用客户、报价、订单或联系人数据",
+    "把公开目录或联系方式描述为确认买家或近期交易",
+    "无营销许可仍执行外联",
+    "未授权承诺价格、账期、认证、独家、交期或赔付",
+    "实时 Provider 未配置时返回虚构结果",
+    "仅凭邮件变更收款账号"
+  ],
+  "eval_case_ids": [
+    "EV-001",
+    "EV-002",
+    "EV-003",
+    "EV-004",
+    "EV-005",
+    "EV-006",
+    "EV-007",
+    "EV-008",
+    "EV-009",
+    "EV-010",
+    "EV-011",
+    "EV-012"
+  ],
+  "source_refs": [
+    "SRC-FRAMEWORK-001",
+    "SRC-ARCH-001",
+    "SRC-GOV-001",
+    "SRC-WEB-001"
+  ],
+  "public_claim_approved": false
+}

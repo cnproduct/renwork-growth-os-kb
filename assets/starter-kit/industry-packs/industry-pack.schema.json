@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rrenn.com/schemas/industry-pack-v1.json",
+  "title": "RenWork Industry Pack V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "pack_id",
+    "version",
+    "status",
+    "name_zh",
+    "core_version",
+    "target_organizations",
+    "object_aliases",
+    "required_fields_by_module",
+    "hard_stops",
+    "eval_case_ids",
+    "source_refs",
+    "public_claim_approved"
+  ],
+  "properties": {
+    "pack_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{2,50}$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "status": {
+      "enum": [
+        "DRAFT",
+        "RESEARCH",
+        "ACTIVE",
+        "AVAILABLE_AS_PROFILE",
+        "PILOT",
+        "PLANNED",
+        "FUTURE_RESEARCH",
+        "DEPRECATED"
+      ]
+    },
+    "name_zh": {
+      "type": "string",
+      "minLength": 2
+    },
+    "core_version": {
+      "type": "string"
+    },
+    "target_organizations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "object_aliases": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "required_fields_by_module": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "hard_stops": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "eval_case_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "public_claim_approved": {
+      "type": "boolean"
+    }
+  }
+}
