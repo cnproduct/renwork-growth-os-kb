@@ -1,6 +1,6 @@
 ---
 name: renwork-growth-os-kb
-description: Build, audit, extend, or publish evidence-governed RenWork knowledge bases using a stable 21-module core, an export-B2B growth operating system, and validated industry packs. Use for knowledge architecture, card ingestion, buyer-growth governance, industry adaptation, evaluation, or website knowledge-center preparation; do not use it as authorization to send outreach or publish externally.
+description: Build, audit, evolve, extend, or publish evidence-governed RenWork knowledge bases using a stable 21-module core, an export-B2B growth operating system, validation-gated skill evolution, and industry packs. Use for knowledge architecture, card ingestion, buyer-growth governance, measured skill improvement, industry adaptation, evaluation, or website knowledge-center preparation; do not use it as authorization to send outreach or publish externally.
 ---
 
 # RenWork Growth OS Knowledge Base
@@ -16,6 +16,8 @@ Build knowledge that can be traced, tested, governed, and used in real workflows
 - Do not fabricate live provider results. If a provider, license, permission, or current source is unavailable, return `unavailable`, preserve the gap, and state what would resolve it.
 - Quote, contract, public publishing, bulk outreach, payment-account changes, high-risk compliance claims, and cross-tenant data movement require the applicable human approval or hard stop.
 - Report local artifacts, repository publication, deployment, production integration, and business acceptance as different states.
+- Store observable actions, tool metadata, redacted decision summaries, outputs, and scores in evolution traces; do not request or persist hidden chain-of-thought, secrets, or cross-tenant personal data.
+- Never let a raw trace, wiki pattern, or model proposal modify an active skill directly. One atomic candidate must pass validation, safety, cost/latency, holdout, provenance, and human-release gates.
 
 ## Choose the operating mode
 
@@ -39,6 +41,19 @@ The bootstrapper refuses to overwrite a non-empty target. Read [architecture.md]
 5. Re-run structural checks and realistic positive, abstention, refusal, cross-tenant, and publication-gate cases.
 
 Read [evidence-governance.md](references/evidence-governance.md) for claim and automation gates.
+
+### Evolve a skill from measured experience
+
+Read [wikiskill-adaptation.md](references/wikiskill-adaptation.md), then use the isolated evolution workspace:
+
+```bash
+node scripts/evolution-init.mjs --state <private-state-directory>
+node scripts/evolution-capture.mjs --state <private-state-directory> --input <redacted-trace.json>
+node scripts/evolution-gate.mjs --policy evolution/config/policy.json --proposal <proposal.json> --baseline <baseline-eval.json> --candidate <candidate-eval.json> --out <gate-result.json>
+node scripts/evolution-record.mjs --state <private-state-directory> --proposal <proposal.json> --gate <gate-result.json>
+```
+
+Use train traces to discover patterns, a separate validation set to gate a single candidate, and a holdout set to check generalization. The task execution agent may use approved business knowledge in production, but the controlled evolution evaluation must not expose the persistent pattern wiki to the inference agent; otherwise the test cannot isolate whether the active skill improved. `PURPOSE.md` must map the active skill to its motivating patterns and accepted gate records.
 
 ### Add or activate an industry pack
 
@@ -73,5 +88,7 @@ Use this loop for every material update:
 - [evidence-governance.md](references/evidence-governance.md): evidence, status, sensitivity, automation, and public-claim rules.
 - [industry-pack-authoring.md](references/industry-pack-authoring.md): schema and activation procedure.
 - [publishing-and-operations.md](references/publishing-and-operations.md): classify, generate, validate, publish, verify, and learn lifecycle.
+- [wikiskill-adaptation.md](references/wikiskill-adaptation.md): verified research basis, RenWork adaptations, and three-layer evolution contract.
+- `evolution/`: schemas, gate policy, pattern wiki seed, examples, and private-runtime layout.
 
 Run `node scripts/scan-public.mjs .` before publishing a derived repository or package.

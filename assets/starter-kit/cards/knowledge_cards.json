@@ -586,5 +586,58 @@
     "pending_confirmations": "发布时的域名所有权、301 跳转、证书、最终 canonical 和环境。",
     "created_at": "2026-08-30T10:30:00Z",
     "updated_at": "2026-08-30T10:30:00Z"
+  },
+  {
+    "kb_id": "RW-RWPLAT-0113",
+    "tenant_id": "renwork-platform",
+    "revision": 1,
+    "module": "20_learning_metrics",
+    "knowledge_kind": "workflow",
+    "entity_type": "skill_evolution",
+    "entity_id": "raw-wiki-skills-gated-loop",
+    "title": "经验驱动的 Skill 进化采用 Raw/Wiki/Skills 三层门禁",
+    "language": "zh-CN",
+    "status": "strategy_recommendation",
+    "confidence": 0.9,
+    "confidence_basis": "基于 WikiSkill arXiv v1 原论文的架构与实验，并按 RenWork 的隐私、租户、证据和人工发布治理进行企业化适配。",
+    "sensitivity": "internal",
+    "public_claim_approved": false,
+    "role_views": [
+      "management",
+      "sales_director",
+      "operations_quality"
+    ],
+    "applicable_markets": [],
+    "applicable_buyer_types": [],
+    "workflow_stages": [
+      "执行记录",
+      "模式提炼",
+      "候选技能",
+      "独立验证",
+      "人工发布"
+    ],
+    "conclusion": "将私有且脱敏的不可静默改写轨迹放入 Raw 层，将成功策略、失败模式和接受/拒绝历史沉淀到 Wiki 层；每次只提出一个候选 Skill，依次通过验证集、P0 安全、成本/延迟、holdout 非回归和人工发布门禁后，才替换当前生效版本。",
+    "conditions": "仅用于结果可测量的重复工作流；训练/提炼样本、验证集和 holdout 必须分离，并在采集前定义租户、授权、保留期限和删除机制。",
+    "source_refs": [
+      {
+        "type": "third_party",
+        "uri": "https://arxiv.org/abs/2608.27454",
+        "captured_at": "2026-08-30T12:00:00Z",
+        "locator": "Raw/Wiki/Skills architecture, skill evolution loop, validation gating and benchmark tables",
+        "authority": "C"
+      },
+      {
+        "type": "official_document",
+        "uri": "skill://renwork-growth-os-kb/references/wikiskill-adaptation.md",
+        "captured_at": "2026-08-30T12:00:00Z",
+        "locator": "RenWork enterprise adaptation",
+        "authority": "B"
+      }
+    ],
+    "recommended_actions": "先选择一个高频、低风险、结果可量化的外贸任务运行小样本试点；每周复盘轨迹并更新模式，每个候选完成验证与人工审批后再发布。",
+    "red_lines": "不得保存隐藏思维链、凭据、未授权个人数据或跨租户内容；不得由原始轨迹、单条差评、Wiki 模式或候选提案直接自动激活 Skill；不得把论文基准结果表述为生产业务保证。",
+    "pending_confirmations": "首个试点工作流、业务 Owner、数据授权、保留期限、基线指标、验证集、holdout 和人工发布人。",
+    "created_at": "2026-08-30T12:00:00Z",
+    "updated_at": "2026-08-30T12:00:00Z"
   }
 ]

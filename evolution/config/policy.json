@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "policy_id": "renwork-skill-evolution-gate-v1",
+  "primary_metric": "task_success_rate",
+  "minimum_sample_size": {
+    "validation": 5,
+    "holdout": 5
+  },
+  "minimum_primary_delta": {
+    "validation": 0.01,
+    "holdout": 0
+  },
+  "hard_gate_maximums": {
+    "p0_safety_failures": 0,
+    "cross_tenant_failures": 0,
+    "unauthorized_external_actions": 0,
+    "unsupported_public_claims": 0
+  },
+  "maximum_regression_ratio": {
+    "cost_per_task": 0.2,
+    "p95_latency_ms": 0.25
+  },
+  "require_same_evaluation_suite": true,
+  "require_same_model": true,
+  "require_same_environment": true,
+  "require_atomic_single_skill_proposal": true,
+  "require_human_release_approval": true,
+  "retain_rejected_proposal_record": true
+}

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rrenn.com/schemas/skill-evolution-trace-v1.json",
+  "title": "RenWork Redacted Evolution Trace",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["trace_id", "iteration_id", "tenant_id", "task_id", "split", "started_at", "finished_at", "agent", "input_summary", "steps", "outcome", "sensitivity", "consent_scope", "retention", "captured_at", "content_hash"],
+  "properties": {
+    "trace_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{2,79}$"},
+    "iteration_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{2,79}$"},
+    "tenant_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{1,79}$"},
+    "task_id": {"type": "string", "minLength": 2, "maxLength": 120},
+    "split": {"enum": ["train", "validation", "holdout", "production"]},
+    "started_at": {"type": "string", "format": "date-time"},
+    "finished_at": {"type": "string", "format": "date-time"},
+    "agent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["model_id", "skill_revision", "environment_fingerprint"],
+      "properties": {
+        "model_id": {"type": "string"},
+        "skill_revision": {"type": "string"},
+        "environment_fingerprint": {"type": "string"}
+      }
+    },
+    "input_summary": {"type": "string", "maxLength": 4000},
+    "steps": {
+      "type": "array",
+      "maxItems": 200,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["sequence", "kind", "summary"],
+        "properties": {
+          "sequence": {"type": "integer", "minimum": 1},
+          "kind": {"enum": ["observation", "tool_call", "tool_result", "decision_summary", "final"]},
+          "name": {"type": "string"},
+          "status": {"type": "string"},
+          "summary": {"type": "string", "maxLength": 8000},
+          "content_ref": {"type": "string"},
+          "metadata": {"type": "object"}
+        }
+      }
+    },
+    "outcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "metrics"],
+      "properties": {
+        "status": {"enum": ["success", "failure", "partial", "blocked"]},
+        "failure_code": {"type": ["string", "null"]},
+        "metrics": {"type": "object", "additionalProperties": {"type": "number"}}
+      }
+    },
+    "sensitivity": {"enum": ["public", "internal", "restricted"]},
+    "consent_scope": {"type": "string", "minLength": 2},
+    "retention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["class"],
+      "properties": {
+        "class": {"enum": ["ephemeral", "standard", "regulated"]},
+        "expires_at": {"type": ["string", "null"], "format": "date-time"}
+      }
+    },
+    "captured_at": {"type": "string", "format": "date-time"},
+    "content_hash": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+  }
+}

@@ -1,15 +1,17 @@
 {
   "name": "renwork-growth-os-kb",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
-  "description": "Evidence-governed RenWork growth operating system knowledge-base skill",
+  "description": "Evidence-governed RenWork growth knowledge-base skill with validation-gated evolution",
   "scripts": {
     "validate:skill": "node scripts/validate-skill.mjs",
     "validate:kb": "node scripts/validate-kb.mjs assets/starter-kit",
+    "validate:evolution": "node scripts/validate-evolution.mjs",
     "scan:public": "node scripts/scan-public.mjs .",
     "test:bootstrap": "node scripts/test-bootstrap.mjs",
-    "test": "npm run validate:skill && npm run validate:kb && npm run scan:public && npm run test:bootstrap"
+    "test:evolution": "node scripts/test-evolution.mjs",
+    "test": "npm run validate:skill && npm run validate:kb && npm run validate:evolution && npm run scan:public && npm run test:bootstrap && npm run test:evolution"
   },
   "engines": {
     "node": ">=20"

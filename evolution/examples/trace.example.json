@@ -1,0 +1,28 @@
+{
+  "trace_id": "TR-DEMO-001",
+  "iteration_id": "ITER-DEMO-001",
+  "tenant_id": "demo-tenant",
+  "task_id": "qualify-buyer-evidence",
+  "split": "train",
+  "started_at": "2026-08-30T12:00:00Z",
+  "finished_at": "2026-08-30T12:01:00Z",
+  "agent": {
+    "model_id": "example-model",
+    "skill_revision": "v1.0.0",
+    "environment_fingerprint": "demo-env-v1"
+  },
+  "input_summary": "Assess whether public company and contact clues prove buyer status.",
+  "steps": [
+    {"sequence": 1, "kind": "observation", "summary": "A company website and generic contact address were available."},
+    {"sequence": 2, "kind": "decision_summary", "summary": "The response separated company candidacy, contact verification, and buyer evidence."},
+    {"sequence": 3, "kind": "final", "summary": "Returned a candidate company with unknown buyer status and a verification plan."}
+  ],
+  "outcome": {
+    "status": "success",
+    "failure_code": null,
+    "metrics": {"task_success_rate": 1}
+  },
+  "sensitivity": "internal",
+  "consent_scope": "skill_evolution",
+  "retention": {"class": "ephemeral", "expires_at": "2026-09-30T00:00:00Z"}
+}

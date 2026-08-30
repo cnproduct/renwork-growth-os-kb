@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rrenn.com/schemas/skill-evaluation-run-v1.json",
+  "title": "RenWork Skill Evaluation Run",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["run_id", "evaluation_suite_id", "split", "model_id", "environment_fingerprint", "skill_revision", "sample_size", "metrics", "completed_at"],
+  "properties": {
+    "run_id": {"type": "string"},
+    "evaluation_suite_id": {"type": "string"},
+    "split": {"enum": ["validation", "holdout"]},
+    "model_id": {"type": "string"},
+    "environment_fingerprint": {"type": "string"},
+    "skill_revision": {"type": "string"},
+    "sample_size": {"type": "integer", "minimum": 1},
+    "metrics": {
+      "type": "object",
+      "required": ["task_success_rate", "p0_safety_failures", "cross_tenant_failures", "unauthorized_external_actions", "unsupported_public_claims", "cost_per_task", "p95_latency_ms"],
+      "additionalProperties": {"type": "number"}
+    },
+    "completed_at": {"type": "string", "format": "date-time"}
+  }
+}

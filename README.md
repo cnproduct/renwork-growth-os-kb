@@ -2,7 +2,7 @@
 
 [![Validate](https://github.com/cnproduct/renwork-growth-os-kb/actions/workflows/validate.yml/badge.svg)](https://github.com/cnproduct/renwork-growth-os-kb/actions/workflows/validate.yml)
 
-一个面向 RenWork / 人人易 AI 的可安装 Codex Skill：用稳定的 21 模块内核构建、审计和扩展企业增长知识库。当前主包聚焦外贸企业 AI 自动化增长，后续通过行业包扩展，不复制租户、权限、证据和审计底座。
+一个面向 RenWork / 人人易 AI 的可安装 Codex Skill：用稳定的 21 模块内核构建、审计、进化和扩展企业增长知识库。当前主包聚焦外贸企业 AI 自动化增长，后续通过行业包扩展，不复制租户、权限、证据和审计底座。
 
 ## 能解决什么
 
@@ -17,15 +17,27 @@
 
 ```text
 SKILL.md                         Codex Skill 入口
+PURPOSE.md                       当前 Skill 与知识模式、门禁记录的溯源
 agents/openai.yaml              UI 元数据
 references/                     架构、证据治理、行业包与发布规范
 assets/starter-kit/             21 模块知识库发行模板
+evolution/                       Raw/Wiki/Skills 进化策略、Schema 与模板
 scripts/bootstrap-kb.mjs        安全创建独立知识库副本
 scripts/validate-kb.mjs         零依赖结构与治理验证
 scripts/scan-public.mjs         本机路径、凭据和内部标识扫描
 ```
 
-Starter Kit V1 包含 21 个模块、12 张起始知识卡、24 个黄金用例，以及 `export-b2b` 和通用行业模板。它是架构与治理发行版，不代表第三方数据源、云端部署、商业价格或业务结果已经生产验收。
+Starter Kit V1 包含 21 个模块、13 张起始知识卡、30 个黄金用例，以及 `export-b2b` 和通用行业模板。它是架构与治理发行版，不代表第三方数据源、云端部署、商业价格或业务结果已经生产验收。
+
+## WikiSkill 企业化适配
+
+V1.1 增加三层经验进化系统：
+
+- Raw：私有、租户隔离、不可静默改写的脱敏执行轨迹；
+- Wiki：版本化的成功策略、失败模式、演进日志和候选影响记录；
+- Skills：带 `PURPOSE.md` 溯源、一次只改一个 Skill 的可执行层。
+
+候选 Skill 必须经过独立验证集、P0 安全硬门、成本/延迟边界、holdout 非回归和人工发布批准。Wiki 保留接受与拒绝历史，但隐私删除、保留期限和法定义务优先；生产业务 Agent 仍可读取获批业务知识，只有受控“技能进化评测”禁止推理 Agent 读取模式 Wiki，以避免评测泄漏。
 
 ## 安装为 Codex Skill
 
@@ -55,7 +67,7 @@ node scripts/validate-kb.mjs ./data/my-growth-kb
 npm test
 ```
 
-验证覆盖：Skill 元数据、21 模块完整性、知识卡关键字段与公开闸门、来源 ID、行业包、黄金用例、Markdown 围栏，以及公开仓库敏感信息扫描。
+验证覆盖：Skill 元数据、21 模块完整性、知识卡关键字段与公开闸门、来源 ID、行业包、黄金用例、Markdown 围栏、Raw 轨迹不可变与脱敏、候选 Skill 正负向门禁、接受/拒绝历史保留，以及公开仓库敏感信息扫描。
 
 ## 使用边界
 

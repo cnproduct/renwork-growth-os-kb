@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rrenn.com/schemas/skill-evolution-gate-result-v1.json",
+  "title": "RenWork Skill Gate Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["gate_id", "proposal_id", "stage", "accepted", "decision", "reasons", "baseline_run_id", "candidate_run_id", "policy_id", "evaluated_at", "result_hash"],
+  "properties": {
+    "gate_id": {"type": "string"},
+    "proposal_id": {"type": "string"},
+    "stage": {"enum": ["validation", "holdout"]},
+    "accepted": {"type": "boolean"},
+    "decision": {"enum": ["ACCEPTED_FOR_HOLDOUT", "APPROVED_PENDING_HUMAN", "REJECTED"]},
+    "reasons": {"type": "array", "items": {"type": "string"}},
+    "baseline_run_id": {"type": "string"},
+    "candidate_run_id": {"type": "string"},
+    "policy_id": {"type": "string"},
+    "evaluated_at": {"type": "string", "format": "date-time"},
+    "result_hash": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+  }
+}

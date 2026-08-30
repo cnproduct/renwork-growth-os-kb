@@ -49,7 +49,7 @@ try {
     company_name: args.company ?? 'RenWork',
     active_industry_pack: args.industry ?? 'export-b2b',
     generated_at: new Date().toISOString(),
-    generated_by: 'renwork-growth-os-kb@1.0.0',
+    generated_by: 'renwork-growth-os-kb@1.1.0',
     status: 'LOCAL_BOOTSTRAP'
   };
   fs.writeFileSync(path.join(outputRoot, 'kb.config.json'), `${JSON.stringify(config, null, 2)}\n`, { flag: 'wx' });

@@ -75,6 +75,20 @@
         "already_public_copy"
       ],
       "limitations": "This is point-in-time page evidence. Recheck the live site before publication; page copy alone does not prove every capability is production-ready."
+    },
+    {
+      "source_id": "SRC-WIKISKILL-001",
+      "title": "WikiSkill: Compiling Agent Experience into Persistent Knowledge for Skill Evolution",
+      "type": "third_party",
+      "uri": "https://arxiv.org/abs/2608.27454",
+      "authority": "C",
+      "status": "readable",
+      "captured_at": "2026-08-30T12:00:00Z",
+      "allowed_use": [
+        "research_architecture",
+        "skill_evolution_design"
+      ],
+      "limitations": "ArXiv v1 research preprint and benchmark evidence only. It is not proof of a supported Google product, a production-ready framework, or universal business improvement."
     }
   ]
 }
