@@ -23,7 +23,7 @@ try {
   writeJsonExclusive(path.join(stateRoot, 'state.json'), {
     schema_version: '1.0.0',
     created_at: new Date().toISOString(),
-    created_by: 'renwork-growth-os-kb@1.1.0',
+    created_by: 'renwork-growth-os-kb@1.2.0',
     status: 'PRIVATE_EVOLUTION_STATE',
     active_skill: 'renwork-growth-os-kb'
   });

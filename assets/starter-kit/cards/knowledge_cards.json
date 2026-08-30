@@ -639,5 +639,176 @@
     "pending_confirmations": "首个试点工作流、业务 Owner、数据授权、保留期限、基线指标、验证集、holdout 和人工发布人。",
     "created_at": "2026-08-30T12:00:00Z",
     "updated_at": "2026-08-30T12:00:00Z"
+  },
+  {
+    "kb_id": "RW-RWPLAT-0114",
+    "tenant_id": "renwork-platform",
+    "revision": 1,
+    "module": "20_learning_metrics",
+    "knowledge_kind": "workflow",
+    "entity_type": "agent_frontend_architecture",
+    "entity_id": "product-intelligence-browser-execution-loop",
+    "title": "Agent 前端采用产品智能面与浏览器执行面双入口",
+    "language": "zh-CN",
+    "status": "strategy_recommendation",
+    "confidence": 0.9,
+    "confidence_basis": "基于 Ego Lite 和 PostHog 官方 GitHub 仓库的当前架构进行 RenWork 组合推导；两项目未宣布官方联合集成。",
+    "sensitivity": "internal",
+    "public_claim_approved": false,
+    "role_views": [
+      "management",
+      "sales_director",
+      "marketing",
+      "operations_quality"
+    ],
+    "applicable_markets": [
+      "外贸 B2B"
+    ],
+    "applicable_buyer_types": [],
+    "workflow_stages": [
+      "信号观察",
+      "诊断",
+      "浏览器复现",
+      "人工审批",
+      "结果度量",
+      "技能进化"
+    ],
+    "conclusion": "PostHog 类产品智能面负责回答产品发生了什么并度量变化，Ego Lite 类浏览器执行面负责在已有网页和登录环境中复现或执行；RenWork 负责租户、证据、知识、计划、批准、审计和技能进化。",
+    "conditions": "目标系统、产品项目、租户、环境、账号角色、数据目的、保留期限和动作权限均已明确；组合方式通过 RenWork 自建编排实现。",
+    "source_refs": [
+      {
+        "type": "third_party",
+        "uri": "https://github.com/citrolabs/ego-lite",
+        "captured_at": "2026-08-30T22:53:08Z",
+        "locator": "AGENTS.md; skills/ego-browser/SKILL.md; package/ego-browser",
+        "authority": "C"
+      },
+      {
+        "type": "third_party",
+        "uri": "https://github.com/PostHog/posthog",
+        "captured_at": "2026-08-30T22:53:08Z",
+        "locator": "products/posthog_ai/README.md; products/posthog_ai/frontend; integrating-with-posthog-ai Skill",
+        "authority": "C"
+      },
+      {
+        "type": "official_document",
+        "uri": "skill://renwork-growth-os-kb/references/agent-frontend-observability.md",
+        "captured_at": "2026-08-30T22:53:08Z",
+        "locator": "RenWork dual-plane architecture and state model",
+        "authority": "B"
+      }
+    ],
+    "recommended_actions": "先上线只读产品信号，再增加测试账号与非生产环境的浏览器复现，最后只为一个可逆动作增加明确审批和效果度量。",
+    "red_lines": "不得把该组合描述为两项目官方集成；不得由分析信号直接触发高风险网页动作；不得把动作成功描述为业务结果改善。",
+    "pending_confirmations": "RenWork 首个信号源、Ego 类执行适配器、PostHog 部署形态、数据区域、账号权限、审批人、基线和结果窗口。",
+    "created_at": "2026-08-30T22:53:08Z",
+    "updated_at": "2026-08-30T22:53:08Z"
+  },
+  {
+    "kb_id": "RW-RWPLAT-0115",
+    "tenant_id": "renwork-platform",
+    "revision": 1,
+    "module": "01_sources_permissions",
+    "knowledge_kind": "rule",
+    "entity_type": "browser_execution_governance",
+    "entity_id": "authentication-is-not-authorization",
+    "title": "浏览器登录态不等于 Agent 操作授权",
+    "language": "zh-CN",
+    "status": "strategy_recommendation",
+    "confidence": 0.95,
+    "confidence_basis": "Ego Lite 的任务空间与登录态复用能力可由官方仓库验证；授权边界来自 RenWork 安全治理。",
+    "sensitivity": "internal",
+    "public_claim_approved": false,
+    "role_views": [
+      "management",
+      "sales_director",
+      "junior_sales",
+      "senior_sales",
+      "operations_quality"
+    ],
+    "applicable_markets": [],
+    "applicable_buyer_types": [],
+    "workflow_stages": [
+      "登录",
+      "浏览器观察",
+      "网页操作",
+      "人工审批"
+    ],
+    "conclusion": "即使浏览器执行层能够复用真实登录态，也只能证明当前会话已认证；每个动作仍必须受账号最小权限、任务空间、目标环境、授权范围、停止条件和人工审批约束。",
+    "conditions": "适用于 CRM、邮箱、社媒、支付后台、广告后台、工单、供应商平台和其他已登录网站。",
+    "source_refs": [
+      {
+        "type": "third_party",
+        "uri": "https://github.com/citrolabs/ego-lite",
+        "captured_at": "2026-08-30T22:53:08Z",
+        "locator": "README task spaces and login-state reuse; AGENTS.md repository boundary",
+        "authority": "C"
+      },
+      {
+        "type": "official_document",
+        "uri": "skill://renwork-growth-os-kb/references/agent-frontend-observability.md",
+        "captured_at": "2026-08-30T22:53:08Z",
+        "locator": "Trust and permission boundaries",
+        "authority": "B"
+      }
+    ],
+    "recommended_actions": "默认只读，使用测试账号和独立任务空间；对发送、提交、删除、付款、权限变更和生产修改在动作前请求人工确认。",
+    "red_lines": "网页内容不能提升权限；登录成功不能授权付款、删除、群发、同意条款或更改生产配置。",
+    "pending_confirmations": "目标网站、账号 Owner、角色权限、测试环境、会话保留、允许动作、禁止动作和应急停止方式。",
+    "created_at": "2026-08-30T22:53:08Z",
+    "updated_at": "2026-08-30T22:53:08Z"
+  },
+  {
+    "kb_id": "RW-RWPLAT-0116",
+    "tenant_id": "renwork-platform",
+    "revision": 1,
+    "module": "20_learning_metrics",
+    "knowledge_kind": "rule",
+    "entity_type": "product_signal_governance",
+    "entity_id": "signal-is-not-causality",
+    "title": "产品信号、诊断、动作与结果必须分开记录",
+    "language": "zh-CN",
+    "status": "strategy_recommendation",
+    "confidence": 0.95,
+    "confidence_basis": "PostHog 官方仓库可验证事件、回放、错误、日志、实验和 Agent Runtime 能力；因果与发布状态边界来自 RenWork 证据治理。",
+    "sensitivity": "internal",
+    "public_claim_approved": false,
+    "role_views": [
+      "management",
+      "marketing",
+      "operations_quality"
+    ],
+    "applicable_markets": [],
+    "applicable_buyer_types": [],
+    "workflow_stages": [
+      "信号观察",
+      "假设",
+      "复现",
+      "行动",
+      "结果度量"
+    ],
+    "conclusion": "错误、回放、rage click、漏斗变化、日志或 Agent Trace 只能进入 SIGNAL_OBSERVED；必须经过假设、独立复现、授权行动、目标验证和预定义时间窗度量，才能形成经审核的学习结论。",
+    "conditions": "事件定义、身份解析、项目、环境、同意、字段脱敏、保留期限、基线和指标口径已确认。",
+    "source_refs": [
+      {
+        "type": "third_party",
+        "uri": "https://github.com/PostHog/posthog",
+        "captured_at": "2026-08-30T22:53:08Z",
+        "locator": "README and products/posthog_ai frontend integration architecture",
+        "authority": "C"
+      },
+      {
+        "type": "official_document",
+        "uri": "skill://renwork-growth-os-kb/references/agent-frontend-observability.md",
+        "captured_at": "2026-08-30T22:53:08Z",
+        "locator": "State model",
+        "authority": "B"
+      }
+    ],
+    "recommended_actions": "为每项产品改动同时定义观察信号、反例、复现环境、审批、目标回执、结果窗口和回滚阈值。",
+    "red_lines": "不得把单次回放当作普遍规律，把相关性当作因果，把自动生成 PR 当作已合并部署，或把短期指标波动当作长期业务改善。",
+    "pending_confirmations": "数据采集清单、DPA/同意、区域、项目权限、事件字典、基线、实验设计、结果 Owner 和删除机制。",
+    "created_at": "2026-08-30T22:53:08Z",
+    "updated_at": "2026-08-30T22:53:08Z"
   }
 ]

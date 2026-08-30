@@ -7,6 +7,7 @@ This public Wiki contains only baseline-policy seed patterns. Real pattern evolu
 - `PAT-BASE-001`: keep source, claim state, sensitivity, freshness, and publication approval separate.
 - `PAT-BASE-002`: preserve tenant isolation and independent buyer evidence/contact/priority grades.
 - `PAT-BASE-003`: separate generation, validation, publication, destination verification, and active release.
+- `PAT-BASE-004`: separate product signals, diagnosis, browser execution, approval, and measured outcome.
 
 ## Pattern rules
 

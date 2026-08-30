@@ -29,6 +29,14 @@ Owner/KDE/Coach 定期聚合无结果、低分回答、赢输单、投诉、沉�
 
 生产业务 Agent 可以读取其租户内获批的企业知识。为避免评测泄漏，只在受控技能进化实验中禁止执行 Agent 读取模式 Wiki。详细边界见 `references/wikiskill-adaptation.md` 与 `evolution/README.md`。
 
+## Agent 前端双入口闭环
+
+产品智能面负责采集产品事件、漏斗、回放、错误、日志、实验和 Agent Trace，形成 `SIGNAL_OBSERVED`；浏览器执行面负责在隔离任务空间与最小权限账号中复现或执行。RenWork 在两者之间补齐租户、知识、假设、审批、审计和结果度量：
+
+`产品信号 → 待验证假设 → 测试环境复现 → 人工批准动作 → 目标回执 → 结果窗口 → 审核后的 Raw/Wiki/Skills 学习`
+
+Ego Lite 与 PostHog 是该双入口的参考实现，不代表已接入 RenWork，也没有官方联合连接器。登录态不等于操作授权，分析信号不等于因果，动作成功不等于业务改善。详细边界见 `references/agent-frontend-observability.md`。
+
 ## 四层指标
 
 | 层 | 指标示例 |

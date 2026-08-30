@@ -1,4 +1,4 @@
 interface:
   display_name: "RenWork Growth OS Knowledge Base"
-  short_description: "构建、审计、进化并扩展证据治理、租户安全的增长知识库"
-  default_prompt: "Use $renwork-growth-os-kb to build, validate, or safely evolve a tenant-safe growth knowledge base."
+  short_description: "构建、进化并用双前端闭环治理企业增长知识库"
+  default_prompt: "Use $renwork-growth-os-kb to build, validate, or safely evolve a tenant-safe growth knowledge base with governed agent frontend signals and actions."

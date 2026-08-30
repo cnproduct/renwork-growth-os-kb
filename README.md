@@ -11,6 +11,7 @@
 - 分开管理买家证据、联系人验证和销售优先级；
 - 用公开声明闸门阻止未核验能力、价格、客户结果和合规结论被直接发布；
 - 用行业包扩展对象别名、字段、规则、硬停止与评测，不重写稳定内核；
+- 用产品智能面观察信号、用浏览器执行面复现或操作，并通过审批与结果度量形成闭环；
 - 用黄金问题、拒答、冲突和跨租户用例做持续回归。
 
 ## 仓库内容
@@ -27,7 +28,7 @@ scripts/validate-kb.mjs         零依赖结构与治理验证
 scripts/scan-public.mjs         本机路径、凭据和内部标识扫描
 ```
 
-Starter Kit V1 包含 21 个模块、13 张起始知识卡、30 个黄金用例，以及 `export-b2b` 和通用行业模板。它是架构与治理发行版，不代表第三方数据源、云端部署、商业价格或业务结果已经生产验收。
+Starter Kit V1 包含 21 个模块、16 张起始知识卡、38 个黄金用例，以及 `export-b2b` 和通用行业模板。它是架构与治理发行版，不代表第三方数据源、云端部署、商业价格或业务结果已经生产验收。
 
 ## WikiSkill 企业化适配
 
@@ -38,6 +39,15 @@ V1.1 增加三层经验进化系统：
 - Skills：带 `PURPOSE.md` 溯源、一次只改一个 Skill 的可执行层。
 
 候选 Skill 必须经过独立验证集、P0 安全硬门、成本/延迟边界、holdout 非回归和人工发布批准。Wiki 保留接受与拒绝历史，但隐私删除、保留期限和法定义务优先；生产业务 Agent 仍可读取获批业务知识，只有受控“技能进化评测”禁止推理 Agent 读取模式 Wiki，以避免评测泄漏。
+
+## Agent 前端双入口
+
+V1.2 增加两类参考入口：
+
+- [Ego Lite](https://github.com/citrolabs/ego-lite)：浏览器执行面，用于外部网站、登录态和第三方 SaaS；[官方 Agent Skill](https://github.com/citrolabs/ego-lite/blob/main/skills/ego-browser/SKILL.md) 位于 `skills/ego-browser/SKILL.md`。
+- [PostHog](https://github.com/PostHog/posthog)：产品智能面，用于事件、漏斗、回放、错误、日志、实验与 Agent Runtime；[Agent 前端](https://github.com/PostHog/posthog/tree/master/products/posthog_ai/frontend) 位于 `products/posthog_ai/frontend/`。
+
+两者没有宣布官方联合集成。本仓库只提供 RenWork 参考架构、知识卡和安全评测，没有打包上游代码、浏览器、遥测数据或客户会话。组合闭环与许可证边界见 `references/agent-frontend-observability.md`。
 
 ## 安装为 Codex Skill
 

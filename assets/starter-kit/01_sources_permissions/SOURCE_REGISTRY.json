@@ -89,6 +89,36 @@
         "skill_evolution_design"
       ],
       "limitations": "ArXiv v1 research preprint and benchmark evidence only. It is not proof of a supported Google product, a production-ready framework, or universal business improvement."
+    },
+    {
+      "source_id": "SRC-EGOLITE-001",
+      "title": "citrolabs/ego-lite official GitHub repository",
+      "type": "third_party",
+      "uri": "https://github.com/citrolabs/ego-lite",
+      "authority": "C",
+      "status": "readable",
+      "captured_at": "2026-08-30T22:53:08Z",
+      "allowed_use": [
+        "browser_execution_architecture",
+        "agent_frontend_research",
+        "optional_connector_assessment"
+      ],
+      "limitations": "Captured at default-branch commit 5ca3c36cba2240b8df2e22ba32127747029039d5. The repository contains the open-source harness and ego-browser Skill, not the closed-source Ego Lite browser application. Project benchmarks and roadmap statements are not independent RenWork validation."
+    },
+    {
+      "source_id": "SRC-POSTHOG-001",
+      "title": "PostHog/posthog official GitHub repository",
+      "type": "third_party",
+      "uri": "https://github.com/PostHog/posthog",
+      "authority": "C",
+      "status": "readable",
+      "captured_at": "2026-08-30T22:53:08Z",
+      "allowed_use": [
+        "product_intelligence_architecture",
+        "agent_observability_research",
+        "optional_connector_assessment"
+      ],
+      "limitations": "Captured at default-branch commit e62b8dd5e87c8af6819fc2372c18b1172b10df51. The main repository has mixed licensing: content outside ee/ is generally MIT Expat subject to third-party terms, while ee/ uses the PostHog Enterprise license. Repository presence does not prove a RenWork integration or production deployment."
     }
   ]
 }

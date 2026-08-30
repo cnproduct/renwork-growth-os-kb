@@ -1,9 +1,9 @@
 {
   "name": "renwork-growth-os-kb",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "type": "module",
-  "description": "Evidence-governed RenWork growth knowledge-base skill with validation-gated evolution",
+  "description": "Evidence-governed RenWork growth knowledge-base skill with gated evolution and agent frontend observability",
   "scripts": {
     "validate:skill": "node scripts/validate-skill.mjs",
     "validate:kb": "node scripts/validate-kb.mjs assets/starter-kit",
