@@ -55,4 +55,3 @@ Market + Persona + Offering + Evidence
 3. 行业包不得硬编码真实客户、价格、凭据或未核验能力；
 4. 高监管行业必须增加专业审核和更严格的拒答/升级测试；
 5. 行业包通过试点门后才能从 `PLANNED` 升级为 `ACTIVE`。
-
