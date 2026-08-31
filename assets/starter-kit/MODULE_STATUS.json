@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated_at": "2026-08-30T10:30:00Z",
+  "updated_at": "2026-08-31T00:51:36Z",
   "modules": [
     {
       "id": "00_kb_governance",
@@ -126,7 +126,7 @@
       "id": "20_learning_metrics",
       "state": "M2_READY",
       "owner": "knowledge_operations",
-      "next_gate": "live_metrics_and_kcs_cadence"
+      "next_gate": "live_metrics_kcs_cadence_and_video_learning_pilot"
     }
   ]
 }

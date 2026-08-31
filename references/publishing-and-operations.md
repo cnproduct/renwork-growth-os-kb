@@ -48,3 +48,5 @@ When a validation or business result fails:
 3. update the source, card, retrieval, workflow, permission, evaluation, or owner layer that caused the failure;
 4. add a regression case;
 5. require review before promoting the fix to shared or public knowledge.
+
+For video production, keep source availability, parsing, generation, technical validation, audiovisual acceptance, staged learning, approved learning, repository synchronization, deployment, publication, destination verification, and business impact as separate states. A human-accepted video may create a staged success-pattern candidate, but it cannot update active templates or public knowledge without a separate review and forward test.
