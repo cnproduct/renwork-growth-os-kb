@@ -57,6 +57,12 @@ node scripts/evolution-record.mjs --state <private-state-directory> --proposal <
 
 Use train traces to discover patterns, a separate validation set to gate a single candidate, and a holdout set to check generalization. The task execution agent may use approved business knowledge in production, but the controlled evolution evaluation must not expose the persistent pattern wiki to the inference agent; otherwise the test cannot isolate whether the active skill improved. `PURPOSE.md` must map the active skill to its motivating patterns and accepted gate records.
 
+### Learn from video production
+
+Read [reviewed-video-learning.md](references/reviewed-video-learning.md). Keep the production Manifest and the knowledge registry separate: a generated or technically valid video is not human accepted, and an accepted video does not automatically become reusable knowledge. Raw ASR/OCR, model rewrites, root-cause hypotheses, unreviewed claims, local media, and cross-tenant content stay inactive.
+
+Use the `renwork-video-production-knowledge-base` skill in `cnproduct/renwork-brand-video-service` for the tenant-scoped append-only registry. Promote a success pattern only when the exact artifact hash, production manifest, human acceptance, relevant QA evidence, applicability, scope limits, and representative forward test are present. Store only reviewed, de-identified governance or method cards in this public knowledge base.
+
 ### Design an Agent frontend and observability loop
 
 Read [agent-frontend-observability.md](references/agent-frontend-observability.md). Route by where the task happens:
@@ -101,6 +107,7 @@ Use this loop for every material update:
 - [industry-pack-authoring.md](references/industry-pack-authoring.md): schema and activation procedure.
 - [publishing-and-operations.md](references/publishing-and-operations.md): classify, generate, validate, publish, verify, and learn lifecycle.
 - [wikiskill-adaptation.md](references/wikiskill-adaptation.md): verified research basis, RenWork adaptations, and three-layer evolution contract.
+- [reviewed-video-learning.md](references/reviewed-video-learning.md): tenant-scoped multimedia, subtitle, incident, and accepted-video learning gates.
 - [agent-frontend-observability.md](references/agent-frontend-observability.md): Ego Lite/PostHog source locations, dual-plane routing, security boundaries, and closed-loop architecture.
 - `evolution/`: schemas, gate policy, pattern wiki seed, examples, and private-runtime layout.
 

@@ -810,5 +810,164 @@
     "pending_confirmations": "数据采集清单、DPA/同意、区域、项目权限、事件字典、基线、实验设计、结果 Owner 和删除机制。",
     "created_at": "2026-08-30T22:53:08Z",
     "updated_at": "2026-08-30T22:53:08Z"
+  },
+  {
+    "kb_id": "RW-RWPLAT-0117",
+    "tenant_id": "renwork-platform",
+    "revision": 1,
+    "module": "20_learning_metrics",
+    "knowledge_kind": "rule",
+    "entity_type": "video_learning_governance",
+    "entity_id": "generated-accepted-approved-separation",
+    "title": "视频生成、视听验收与知识批准必须分开",
+    "language": "zh-CN",
+    "status": "strategy_recommendation",
+    "confidence": 0.98,
+    "confidence_basis": "基于 RenAsset 已实现的候选/批准分层和 RenWork 逐场景 Manifest 状态模型完成转换，并增加租户、品牌档案和公开知识边界。",
+    "sensitivity": "internal",
+    "public_claim_approved": false,
+    "role_views": [
+      "management",
+      "marketing",
+      "operations_quality"
+    ],
+    "applicable_markets": [],
+    "applicable_buyer_types": [],
+    "workflow_stages": [
+      "视频生成",
+      "技术验证",
+      "视听验收",
+      "知识暂存",
+      "知识审核"
+    ],
+    "conclusion": "视频文件生成、技术可播放、人工视听验收、知识候选暂存和知识批准是五个独立状态；任何前态都不能自动推导后态。",
+    "conditions": "适用于 RenWork 品牌片、培训视频、产品演示、社媒短视频及其字幕、FAQ 和成功模式学习。",
+    "source_refs": [
+      {
+        "type": "official_document",
+        "uri": "https://github.com/cnproduct/renwork-brand-video-service/tree/main/skills/renwork-video-production-knowledge-base",
+        "captured_at": "2026-08-31T00:51:36Z",
+        "locator": "SKILL.md non-negotiable boundary and seven gates",
+        "authority": "B"
+      },
+      {
+        "type": "official_document",
+        "uri": "skill://renwork-growth-os-kb/references/reviewed-video-learning.md",
+        "captured_at": "2026-08-31T00:51:36Z",
+        "locator": "State model",
+        "authority": "B"
+      }
+    ],
+    "recommended_actions": "为每条视频保留 Manifest、验收证据和知识审批记录；对每次状态变化记录负责人、时间和证据。",
+    "red_lines": "不得把文件存在、ffprobe 成功、自动评分、单次预览、Git 提交或用户接受视频自动表述为知识已批准、已部署或已产生业务效果。",
+    "pending_confirmations": "首个生产试点、视频 Owner、知识审核人、私有注册表位置、保留期和前向测试样本。",
+    "created_at": "2026-08-31T00:51:36Z",
+    "updated_at": "2026-08-31T00:51:36Z"
+  },
+  {
+    "kb_id": "RW-RWPLAT-0118",
+    "tenant_id": "renwork-platform",
+    "revision": 1,
+    "module": "20_learning_metrics",
+    "knowledge_kind": "workflow",
+    "entity_type": "video_success_pattern",
+    "entity_id": "accepted-artifact-promotion-gate",
+    "title": "优秀成片模式必须从不可变验收证据晋级",
+    "language": "zh-CN",
+    "status": "strategy_recommendation",
+    "confidence": 0.96,
+    "confidence_basis": "转换并收紧 RenAsset 的 user_approved 与 QA 门禁，增加成片 SHA-256、生产 Manifest、适用限制和代表性前向测试。",
+    "sensitivity": "internal",
+    "public_claim_approved": false,
+    "role_views": [
+      "management",
+      "marketing",
+      "operations_quality"
+    ],
+    "applicable_markets": [],
+    "applicable_buyer_types": [],
+    "workflow_stages": [
+      "成片验收",
+      "模式提取",
+      "知识审核",
+      "前向测试",
+      "模板激活"
+    ],
+    "conclusion": "可复用成功模式必须关联精确成片 URI 与 SHA-256、生产 Manifest、人工完整播放验收、相关 QA 证据、适用范围和限制，并在新代表性项目上前向测试后才可成为默认模板。",
+    "conditions": "一次只提取一个可检验模式；验收证据必须覆盖该模式声称改善的画面、字幕、音频、品牌、节奏或 CTA。",
+    "source_refs": [
+      {
+        "type": "official_document",
+        "uri": "https://github.com/cnproduct/renasset-brand-video-master",
+        "captured_at": "2026-08-31T00:51:36Z",
+        "locator": "SKILL.md Gate F; references/learning-workflow.md approved-video learning; scripts/renasset_kb.py",
+        "authority": "B"
+      },
+      {
+        "type": "official_document",
+        "uri": "skill://renwork-growth-os-kb/references/reviewed-video-learning.md",
+        "captured_at": "2026-08-31T00:51:36Z",
+        "locator": "Accepted-video boundary",
+        "authority": "B"
+      }
+    ],
+    "recommended_actions": "先在私有租户项目中暂存候选模式，由视频 QA 和品牌 Owner 审核，再对一条新代表性视频做前向测试并记录是否接受。",
+    "red_lines": "自动评分、完播率推测、文件出现在目录、一次拖动预览或 Agent 自报成功均不能替代用户验收和 QA；不得把一个成片参数泛化到所有行业、渠道和时长。",
+    "pending_confirmations": "成片验收表、QA 最小证据集、默认模板发布人、试点项目和回滚规则。",
+    "created_at": "2026-08-31T00:51:36Z",
+    "updated_at": "2026-08-31T00:51:36Z"
+  },
+  {
+    "kb_id": "RW-RWPLAT-0119",
+    "tenant_id": "renwork-platform",
+    "revision": 1,
+    "module": "01_sources_permissions",
+    "knowledge_kind": "rule",
+    "entity_type": "video_learning_scope",
+    "entity_id": "tenant-brand-private-registry",
+    "title": "视频学习注册表必须按租户和品牌档案隔离",
+    "language": "zh-CN",
+    "status": "strategy_recommendation",
+    "confidence": 0.98,
+    "confidence_basis": "RenWork 总体租户治理与转换版视频知识 CLI 均把 tenant_id 和 brand_profile_id 固定在可信项目上下文。",
+    "sensitivity": "internal",
+    "public_claim_approved": false,
+    "role_views": [
+      "management",
+      "marketing",
+      "operations_quality"
+    ],
+    "applicable_markets": [],
+    "applicable_buyer_types": [],
+    "workflow_stages": [
+      "素材摄取",
+      "知识暂存",
+      "审核",
+      "跨项目复用",
+      "公共知识发布"
+    ],
+    "conclusion": "原始媒体、转录、字幕、客户信息、本地路径、审批日志和成功模式候选必须保存在租户私有项目中；租户与品牌档案由可信上下文固定，不能由模型内容切换。",
+    "conditions": "跨租户复用仅允许经授权、去标识、有来源、已审核的通用方法，不复制客户媒体、联系方式、主张或品牌资产。",
+    "source_refs": [
+      {
+        "type": "official_document",
+        "uri": "https://github.com/cnproduct/renwork-brand-video-service/tree/main/skills/renwork-video-production-knowledge-base",
+        "captured_at": "2026-08-31T00:51:36Z",
+        "locator": "SKILL.md scope boundary; scripts/renwork_video_kb.py apply_scope",
+        "authority": "B"
+      },
+      {
+        "type": "official_document",
+        "uri": "skill://renwork-growth-os-kb/references/reviewed-video-learning.md",
+        "captured_at": "2026-08-31T00:51:36Z",
+        "locator": "Tenant and privacy boundary",
+        "authority": "B"
+      }
+    ],
+    "recommended_actions": "初始化私有注册表时从已认证组织上下文写入租户与品牌档案；公开知识库只接收经审核和去标识的方法卡与评测。",
+    "red_lines": "禁止把原始视频、完整转录、客户数据、凭据、本地绝对路径或跨租户素材提交到公共知识库；禁止从模型请求体接受租户切换。",
+    "pending_confirmations": "私有存储位置、加密、访问角色、保留期、删除流程、去标识标准和跨租户授权流程。",
+    "created_at": "2026-08-31T00:51:36Z",
+    "updated_at": "2026-08-31T00:51:36Z"
   }
 ]

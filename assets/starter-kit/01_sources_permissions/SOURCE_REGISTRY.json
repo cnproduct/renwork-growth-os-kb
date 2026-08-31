@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-08-30T10:30:00Z",
+  "generated_at": "2026-08-31T00:51:36Z",
   "sources": [
     {
       "source_id": "SRC-SKILL-001",
@@ -119,6 +119,36 @@
         "optional_connector_assessment"
       ],
       "limitations": "Captured at default-branch commit e62b8dd5e87c8af6819fc2372c18b1172b10df51. The main repository has mixed licensing: content outside ee/ is generally MIT Expat subject to third-party terms, while ee/ uses the PostHog Enterprise license. Repository presence does not prove a RenWork integration or production deployment."
+    },
+    {
+      "source_id": "SRC-RENASSET-VIDEO-001",
+      "title": "RenAsset reviewed video-production knowledge workflow",
+      "type": "official_document",
+      "uri": "https://github.com/cnproduct/renasset-brand-video-master",
+      "authority": "B",
+      "status": "readable",
+      "captured_at": "2026-08-31T00:51:36Z",
+      "allowed_use": [
+        "reviewed_video_learning_reference",
+        "record_and_gate_design",
+        "renwork_conversion_delta"
+      ],
+      "limitations": "Captured at default-branch commit 9599b71158f1a85fe57b9aa62efd107e1953dcc5. Its RenAsset brand assets, financial-domain claims, terminology, scores, and product positioning are not RenWork facts and were not migrated."
+    },
+    {
+      "source_id": "SRC-RENWORK-VIDEO-KB-001",
+      "title": "RenWork video-production knowledge-base skill",
+      "type": "official_document",
+      "uri": "https://github.com/cnproduct/renwork-brand-video-service/tree/main/skills/renwork-video-production-knowledge-base",
+      "authority": "B",
+      "status": "repository_target",
+      "captured_at": "2026-08-31T00:51:36Z",
+      "allowed_use": [
+        "tenant_scoped_registry_contract",
+        "video_learning_governance",
+        "success_pattern_gate"
+      ],
+      "limitations": "Repository publication proves source availability only. It does not prove deployment, tenant data migration, external publication, video acceptance, or business improvement. Operational registries and media remain private project data."
     }
   ]
 }

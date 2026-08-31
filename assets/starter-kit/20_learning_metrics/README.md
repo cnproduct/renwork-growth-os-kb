@@ -7,7 +7,7 @@ confidence: 0.95
 sensitivity: public
 public_claim_approved: false
 created_at: 2026-08-30T10:30:39.882Z
-updated_at: 2026-08-30T10:30:39.882Z
+updated_at: 2026-08-31T00:51:36Z
 ---
 
 # 复盘、指标与持续学习
@@ -37,6 +37,12 @@ Owner/KDE/Coach 定期聚合无结果、低分回答、赢输单、投诉、沉�
 
 Ego Lite 与 PostHog 是该双入口的参考实现，不代表已接入 RenWork，也没有官方联合连接器。登录态不等于操作授权，分析信号不等于因果，动作成功不等于业务改善。详细边界见 `references/agent-frontend-observability.md`。
 
+## 视频生产审核式学习环
+
+视频生产 Manifest 与知识注册表分轨：Manifest 记录素材、场景、生成尝试、技术状态和最终验收；知识注册表记录 `STAGED` 与 `APPROVED` 的素材观察、主张、术语、FAQ 和成功模式。`generated` 不等于 `accepted`，`accepted` 也不会自动成为可复用知识。
+
+未经审核的 ASR/OCR、模型改写、根因假设、产品或行业主张、生成视频、自动评分和跨租户内容不得进入生效知识。成功模式必须关联精确成片哈希、生产 Manifest、人工完整播放验收、相关 QA 证据、适用范围和限制，并在新代表性项目中前向测试后才可成为默认模板。详细边界见 `references/reviewed-video-learning.md`。
+
 ## 四层指标
 
 | 层 | 指标示例 |
@@ -62,6 +68,7 @@ Ego Lite 与 PostHog 是该双入口的参考实现，不代表已接入 RenWork
 - [ ] 沉默诊断
 - [ ] 周报
 - [ ] 知识更新候选
+- [ ] 视频生产学习候选与成片验收证据
 - [ ] 成熟度与质量指标
 
 ## 证据
